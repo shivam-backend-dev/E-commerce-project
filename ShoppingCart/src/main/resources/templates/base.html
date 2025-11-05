@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(content)">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"/>
+       
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+         <!----------------- Start Navbar ------------------->
+         
+         <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <i class="fa-solid fa-cart-shopping"></i> MercadoX</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/products">Product</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+          
+            
+         <ul class="dropdown-menu">
+            <li th:each="c:${categorys}"><a class="dropdown-item" th:href="@{'/products?category='+${c.name}}">
+             [[${c.name}]]</a></li></ul></li> </ul> 
+          
+      
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <th:block th:if="${user==null}">
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="/signin"><i class="fa-solid fa-right-to-bracket">
+                 </i> LOGIN</a>
+             </li>
+        
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="/register">REGISTER</a>
+             </li>
+        
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="#">ADMIN</a>
+             </li>
+        </th:block>
+        
+        <th:block th:if="${user!=null}">
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="/user/cart"><i class="fa-solid fa-cart-shopping">
+                 </i> Cart [ [[${countCart}]] ]</a>
+             </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" 
+             aria-expanded="false"> <i class="fa-solid fa-user"></i> [[${user.name}]]
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+        
+             <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/logout"><i class="fa-solid fa-right-to-bracket">
+                 </i> Logout</a>
+            </li>
+        </th:block>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+         
+ <!------------------------------------- End Navbar ----------------------------->
+         
+         <h1>NavBar</h1>
+         <div th:replace="${content}"></div>
+         
+ <!------------------------------------- Start Footer ---------------------------->
+          
+          <div class="container-fluid p-1 bg-primary text-center text-white" style="margin-top: 250px">
+               <p>MercadoX.com</p>
+          </div>
+ 
+ 
+ <!------------------------------------- End Footer ---------------------------->
+         
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+           integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+           crossorigin="anonymous">
+          </script>
+</body>
+</html>

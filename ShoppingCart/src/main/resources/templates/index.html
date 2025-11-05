@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+       <section>
+                  <!--------- Start Slider --------->
+       
+              <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+          <img src="img/ecom1.png" class="d-block w-100" alt="..."
+      height="350px">
+    </div>
+    
+    <div class="carousel-item active">
+    <img src="img/ecom3.jpg" class="d-block w-100" alt="..."
+      height="350px">
+     </div>
+      
+    <div class="carousel-item">
+     <img src="img/ecom2.jpg" class="d-block w-100" alt="..."
+      height="350px">
+    </div>
+    
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+                 <!--------- End Slider --------->
+                 
+                 <!----------------  Start Category Module ------------------------>
+                 
+                 <div class="container">
+                     <div class="row">
+                          <p class="text-center fs-4"> <b>Categories</b></p>
+                            <div class="col-md-2">
+                            
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/appli.png" width=65% height="140px">
+                                   <p>Electronics</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                             <div class="col-md-2">
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/beuty.png" width=65% height="140px">
+                                   <p>Beauty Products</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                             <div class="col-md-2">
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/groccery.jpg" width=65% height="140px">
+                                   <p>Grocery Items</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                             <div class="col-md-2">
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/laptop.jpg" width=65% height="140px">
+                                   <p>Laptops</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                             <div class="col-md-2">
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/mobile.png" width=65% height="140px">
+                                   <p>Mobiles</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                             <div class="col-md-2">
+                               <div class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/category_img/pant.png" width=65% height="140px">
+                                   <p>Cloths</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                   
+                        </div>
+                    </div>                          
+         
+                 
+                 <!------------------ End Category Module ------------------------->
+                 
+                 <!----------------  Start Newly Arrived Latest Product Module ------------------------>
+                 
+                  <div class="container-fluid bg-light p-3">
+                     <div class="row">
+                          <p class="text-center fs-4"> <b>Latest Products</b></p>
+                          
+                          <div class="col-md-3">
+                               <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/product_img/laptop.jpg" width=65% height="140px">
+                                   <p>MacBook Pro 5</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                          
+                          <div class="col-md-3">
+                               <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/product_img/phone.jpg" width=65% height="140px">
+                                   <p>IPhone 16 pro</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                          
+                          <div class="col-md-3">
+                               <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/product_img/shirt.jpg" width=65% height="140px">
+                                   <p>Fashion</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                            
+                            <div class="col-md-3">
+                               <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                                   <div class="card-body text-center">
+                                   <img src="img/product_img/nike-5644799_1920.jpg" width=65% height="140px">
+                                   <p>Nike Premium Sneakers</p>
+                                   </div>
+                               </div>                           
+                            </div>
+                        </div>
+                   </div>
+                           
+                 <!------------------  End Latest Product Module ------------------------>
+                 
+       </section>
+</body>
+</html>
