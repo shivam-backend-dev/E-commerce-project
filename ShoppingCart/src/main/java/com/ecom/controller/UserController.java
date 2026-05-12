@@ -1,6 +1,6 @@
-package com.ecom.controller;
+	package com.ecom.controller;
 
-import java.security.Principal;
+import java.security.Principal; 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,8 +72,17 @@ public class UserController {
 	}
 	
 	@GetMapping("/cart")
-	public String loadCartPage()
+	public String loadCartPage(Principal p, Model m)
 	{
+		UserDtls user = getLoggedInUserDetails(p);
+		List<Cart> carts =  cartService.getCartsByUser(user.getId());
+		m.addAttribute("carts", carts);
 		return "/user/cart";
+	}
+
+	private UserDtls getLoggedInUserDetails(Principal p) {
+		String email = p.getName();
+		UserDtls userDtls = userService.getUserByEmail(email);
+		return userDtls;
 	}
 }
